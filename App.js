@@ -5,17 +5,9 @@ import { View, Text,Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from 'react-native-splash-screen'
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
-  );
-}
+import ChooseProf from './Screens/ChooseProf/ChooseProf';
+import Home from './Screens/Home/Home';
+
 function DetailsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -37,8 +29,8 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="ChooseProf" component={ChooseProf} options={{headerShown: false}}/>       
+        <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
