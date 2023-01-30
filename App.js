@@ -1,7 +1,7 @@
 // In App.js in a new project
 
 import React, {useEffect} from 'react';
-import { View, Text,Button } from 'react-native';
+import { View, Text,Button,Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -9,6 +9,19 @@ import SplashScreen from 'react-native-splash-screen'
 import ChooseProf from './Screens/ChooseProf/ChooseProf';
 import Home from './Screens/Home/Home';
 import Collapse from './Screens/Components/Collapse'
+
+//Bottom Navigation Tab Icons
+import home_icon from './Assets/BottomNav/Home.png'
+import search from './Assets/BottomNav/Search.png'
+import coming from './Assets/BottomNav/Coming.png'
+import download from './Assets/BottomNav/Download.png'
+import more from './Assets/BottomNav/More.png'
+//Selected Bottom Nav Icons
+import home_icon_select from './Assets/NavSelected/Home.png'
+import search_select from './Assets/NavSelected/Search.png'
+import coming_select from './Assets/NavSelected/Coming.png'
+import download_select from './Assets/NavSelected/Download.png'
+import more_select from './Assets/NavSelected/More.png'
 
 function DetailsScreen({ navigation }) {  
   return (
@@ -37,9 +50,54 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} options={{headerShown: false}} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+    <Tab.Navigator
+    screenOptions={{
+      tabBarLabelStyle: { fontSize: 12 },
+      tabBarItemStyle: { width: 100,height:70 },
+      tabBarStyle: { backgroundColor: 'black' },
+    }}
+    >
+      <Tab.Screen name="Home" component={Home}
+       options={{
+        headerShown: false,
+        tabBarShowLabel:false,
+        tabBarIcon: ({focused }) => (    
+          <Image resizeMode='cover' source={focused ? home_icon_select: home_icon} />
+       )
+      }}/>
+      <Tab.Screen name="Search" component={Home}
+       options={{
+        headerShown: false,
+        tabBarShowLabel:false,
+        tabBarIcon: ({focused }) => (    
+          <Image resizeMode='cover' source={focused ? search_select: search} />
+       )
+      }}/>
+      <Tab.Screen name="Coming" component={Home}
+       options={{
+        headerShown: false,
+        tabBarShowLabel:false,
+        tabBarIcon: ({focused }) => (    
+          <Image resizeMode='cover' source={focused ? coming_select: coming} />
+       )
+      }}/>
+      <Tab.Screen name="Download" component={Home}
+       options={{
+        headerShown: false,
+        tabBarShowLabel:false,
+        tabBarIcon: ({focused }) => (    
+          <Image resizeMode='cover' source={focused ? download_select: download} />
+       )
+      }}/>
+      <Tab.Screen name="More" component={Home}
+       options={{
+        headerShown: false,
+        tabBarShowLabel:false,
+        tabBarIcon: ({focused }) => (    
+          <Image resizeMode='cover' source={focused ? more_select: more} />
+       )
+      }}/>
+      
     </Tab.Navigator>
   );
 }
