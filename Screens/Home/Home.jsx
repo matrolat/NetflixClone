@@ -1,96 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { SafeAreaView, ScrollView, Text, Animated, StyleSheet } from 'react-native';
+import Collapse from '../Components/Collapse'
 
-
-// You can import from local files
-import DynamicHeader from '../Components/DynamicHeader/DynamicHeader';
 
 
 export default function Home() {
-  let scrollOffsetY = useRef(new Animated.Value(0)).current;  
-
   return (
-    <SafeAreaView style={styles.container}>
-      <DynamicHeader animHeaderValue={scrollOffsetY} />
-      <ScrollView 
-        scrollEventThrottle={16}
-        onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { y: scrollOffsetY}}}],
-          {useNativeDriver: false}
-        )}
-      >         
-                   <Text>1</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>2</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>3</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-                   <Text>text</Text>
-      </ScrollView>
-                   
-    </SafeAreaView>
+   <Collapse/>
   );
 }
 

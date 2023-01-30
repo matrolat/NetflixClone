@@ -35,7 +35,7 @@ export default class ChooseProf extends Component {
                 <View style={{ flex: 5, backgroundColor: 'black', width: '100%', justifyContent: 'center' }}>
 
                     <View className="content" style={{ flexDirection: 'row', zIndex: 1, paddingHorizontal: 80, marginVertical: 10, justifyContent: 'space-between' }}>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('MyTabs')}>
                             <Image
                                 style={{
 
@@ -47,14 +47,14 @@ export default class ChooseProf extends Component {
 
                             />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Collapse')}>
                         <Image
                             style={{
                                 width: 100,
                                 height: 121,
                             }}
                             source={prof2}
-                            onPress={() => this.props.navigation.navigate('Home')}
+                            onPress={() => this.props.navigation.navigate('Collapse')}
                             />
                             </TouchableOpacity>
                     </View>
