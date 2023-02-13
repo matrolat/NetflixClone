@@ -47,14 +47,14 @@ export default class ChooseProf extends Component {
 
                             />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Collapse')}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Details')}>
                         <Image
                             style={{
                                 width: 100,
                                 height: 121,
                             }}
                             source={prof2}
-                            onPress={() => this.props.navigation.navigate('Collapse')}
+                           
                             />
                             </TouchableOpacity>
                     </View>

@@ -7,7 +7,7 @@ const H_MAX_HEIGHT = 447+44;
 const H_MIN_HEIGHT =87;
 const H_SCROLL_DISTANCE = H_MAX_HEIGHT - H_MIN_HEIGHT;
 
-const CollapsibleHeader = () => {
+const Collapse = ({ navigation }) => {
   const scrollOffsetY = useRef(new Animated.Value(0)).current;
   const headerScrollHeight = scrollOffsetY.interpolate({
     inputRange: [0, H_SCROLL_DISTANCE],
@@ -21,7 +21,8 @@ const CollapsibleHeader = () => {
       style={{backgroundColor:"black"}}
         onScroll={Animated.event([
             { nativeEvent: { contentOffset: { y: scrollOffsetY } } }
-          ])}
+          ],  {useNativeDriver: false}
+          )}
         scrollEventThrottle={16}
       >
         <View style={{ paddingTop: H_MAX_HEIGHT,backgroundColor:"black" }}>
@@ -29,19 +30,24 @@ const CollapsibleHeader = () => {
 
           <MovieSlider
           title="Continue Watching "
+          navigation={navigation}
           />
           <MovieSlider
           title="Trending Now "
+          navigation={navigation}
           />
 
           <MovieSlider
           title="Top 10 In INDIA "
+          navigation={navigation}
           />
           <MovieSlider
           title="My List "
+          navigation={navigation}
           />
           <MovieSlider
           title="Netflix Originals "
+          navigation={navigation}
           />
 
         
@@ -85,4 +91,4 @@ const CollapsibleHeader = () => {
   )
 }
 
-export default CollapsibleHeader;
+export default Collapse;

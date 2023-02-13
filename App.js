@@ -5,6 +5,7 @@ import { View, Text,Button,Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { withNavigation } from 'react-navigation';
 import SplashScreen from 'react-native-splash-screen'
 import ChooseProf from './Screens/ChooseProf/ChooseProf';
 import Home from './Screens/Home/Home';
@@ -22,6 +23,10 @@ import search_select from './Assets/NavSelected/Search.png'
 import coming_select from './Assets/NavSelected/Coming.png'
 import download_select from './Assets/NavSelected/Download.png'
 import more_select from './Assets/NavSelected/More.png'
+import Player from './Screens/Components/Player';
+import MovieSlider from './Screens/Components/MovieSlider/MovieSlider';
+import DynamicHeader from './Screens/Components/DynamicHeader/DynamicHeader';
+import Search from './Screens/Search/Search';
 
 function DetailsScreen({ navigation }) {  
   return (
@@ -29,7 +34,7 @@ function DetailsScreen({ navigation }) {
       <Text>Details Screen</Text>
       <Button
         title="Go to Home... again"
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('Settings')}
       />
     </View>
   );
@@ -48,7 +53,7 @@ const Tab = createBottomTabNavigator();
 
 
 
-function MyTabs() {
+function MyTabs({navigation}) {
   return (
     <Tab.Navigator
     screenOptions={{
@@ -57,7 +62,9 @@ function MyTabs() {
       tabBarStyle: { backgroundColor: 'black' },
     }}
     >
-      <Tab.Screen name="Home" component={Home}
+      <Tab.Screen name="Home" 
+      // component={Home}
+        children={()=><Home navigation={navigation}/>}
        options={{
         headerShown: false,
         tabBarShowLabel:false,
@@ -65,7 +72,7 @@ function MyTabs() {
           <Image resizeMode='cover' source={focused ? home_icon_select: home_icon} />
        )
       }}/>
-      <Tab.Screen name="Search" component={Home}
+      <Tab.Screen name="Search" component={Search}
        options={{
         headerShown: false,
         tabBarShowLabel:false,
@@ -112,8 +119,10 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="ChooseProf" component={ChooseProf} options={{headerShown: false}}/>       
         <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
+        <Stack.Screen name="Details" component={DetailsScreen} options={{headerShown: false}}/>       
+        <Stack.Screen name="Settings" component={SettingsScreen} options={{headerShown: false}}/>       
+        <Stack.Screen name="Player" component={Player} options={{headerShown: false}} />
         <Stack.Screen name="MyTabs" component={MyTabs} options={{headerShown: false}} />
-        <Stack.Screen name="Collapse" component={Collapse} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

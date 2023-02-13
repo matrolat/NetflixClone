@@ -50,7 +50,9 @@ export default class CollapseHeader extends Component {
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{ height: 45, width: 110, backgroundColor: '#C4C4C4', borderRadius: 5.62, display: 'flex', justifyContent: 'center', alignItems: 'center',marginTop:-5 }}>
+                    <TouchableOpacity
+                   
+                    style={{ height: 45, width: 110, backgroundColor: '#C4C4C4', borderRadius: 5.62, display: 'flex', justifyContent: 'center', alignItems: 'center',marginTop:-5 }}>
                         <Image
                             style={{
                                 height: 30,

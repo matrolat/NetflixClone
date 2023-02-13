@@ -56,8 +56,8 @@ export default function DynamicHeader({ animHeaderValue }) {
                 ]}
             >
               <ImageBackground source={homebg} style={{height:415,width:'100%',display:'flex',flexDirection:'column-reverse'}}>
-              <LinearGradient  colors={["rgba(1,1,1, 0)", "rgba(1,1,1, 1)"]} style={{height:30,width:'100%'}}>
-                </LinearGradient>
+              {/* <LinearGradient  colors={["rgba(1,1,1, 0)", "rgba(1,1,1, 1)"]} style={{height:30,width:'100%'}}>
+                </LinearGradient> */}
                 </ImageBackground>
 
            
@@ -85,7 +85,9 @@ export default function DynamicHeader({ animHeaderValue }) {
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{ height: 45, width: 110, backgroundColor: '#C4C4C4', borderRadius: 5.62, display: 'flex', justifyContent: 'center', alignItems: 'center',marginTop:-5 }}>
+                    <TouchableOpacity
+                    
+                    style={{ height: 45, width: 110, backgroundColor: '#C4C4C4', borderRadius: 5.62, display: 'flex', justifyContent: 'center', alignItems: 'center',marginTop:-5 }}>
                         <Image
                             style={{
                                 height: 30,

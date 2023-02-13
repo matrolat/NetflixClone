@@ -4,9 +4,9 @@ import Collapse from '../Components/Collapse'
 
 
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
-   <Collapse/>
+   <Collapse navigation={navigation}/>
   );
 }
 
